@@ -44,7 +44,7 @@ class SpellingBee:
 
         ranks = [["Beginner",0], ["Good Start",2], ["Moving Up",5],
                  ["Good",8], ["Solid",15], ["Nice",25], ["Great",40],
-                 ["Amazing",50], ["Genius",70]]
+                 ["Amazing",50], ["Genius",70], ["Queen Bee", 100]]
 
         r = max([l for l in ranks 
                     if self.score/self.max_score * 100 >= l[1]],
@@ -69,7 +69,7 @@ class SpellingBee:
 
         rows = [(len(row)*'{:<14}').format(*row) for row in columnized_list]
 
-        return '\n'.join(['Guessed words:'] + rows)
+        return '\n'.join(['Guessed words ({}):'.format(len(self.guessed))] + rows)
 
 
 def quit():
